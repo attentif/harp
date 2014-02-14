@@ -4,7 +4,7 @@
 
 ### What is Harp?
 
-Harp is a static web server that also serves Jade, Markdown, EJS, Less, Stylus, and CoffeeScript **as** HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, Harp can also compile your project down to static assets for hosting behind any valid HTTP server.
+Harp is a static web server that also serves Jade, Markdown, EJS, Less, Stylus, Sass, and CoffeeScript **as** HTML, CSS, and JavaScript without any configuration. It supports the beloved layout/partial paradigm and it has flexible metadata and global objects for traversing the file system and injecting custom data into templates. Optionally, Harp can also compile your project down to static assets for hosting behind any valid HTTP server.
 
 ### Why?
 
@@ -14,7 +14,7 @@ Pre-compilers are becoming extremely powerful and shipping front-ends as static 
 
 - easy installation, easy to use
 - fast and lightweight
-- robust (clean urls, intelegent path redirects)
+- robust (clean urls, intelligent path redirects)
 - built in pre-processing
 - first-class layout and partial support
 - built in LRU caching in production mode
@@ -24,11 +24,11 @@ Pre-compilers are becoming extremely powerful and shipping front-ends as static 
 
 ### Supported Pre-Processors
 
-|                 | Language Superset             | Whitespace Sensitive  
-| --------------- | ----------------------------- | --------------------------------------------------------------------------------------
-| **HTML**        | [EJS](http://embeddedjs.com/) | [Jade](http://jade-lang.com/), [Markdown](http://daringfireball.net/projects/markdown/)
-| **CSS**         | [LESS](http://lesscss.org/)   | [Stylus](http://learnboost.github.io/stylus/)
-| **JavaScript**  | (TBD)                         | [CoffeeScript](http://coffeescript.org/)
+|                 | Language Superset                                                 | Whitespace Sensitive  
+| --------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------
+| **HTML**        | [EJS](http://embeddedjs.com/)                                     | [Jade](http://jade-lang.com/), [Markdown](http://daringfireball.net/projects/markdown/)
+| **CSS**         | [LESS](http://lesscss.org/), [Sass (SCSS)](http://sass-lang.com/) | [Stylus](http://learnboost.github.io/stylus/)
+| **JavaScript**  | (TBD)                                                             | [CoffeeScript](http://coffeescript.org/)
 
 ### Resources
 
@@ -119,7 +119,7 @@ var app = express();
 
 app.configure(function(){
   app.use(express.static(__dirname + "/public"));
-  app.use(harp.pipeline(__dirname + "/public"));
+  app.use(harp.mount(__dirname + "/public"));
 });
 ```
 
@@ -144,7 +144,7 @@ If you wish to add new functionality to harp, please provide [@sintaxi](mailto:b
 
 ## License
 
-Copyright 2012 Chloi Inc. All rights reserved.
+Copyright 2012–2014 Chloi Inc. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -152,4 +152,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/a0e15683fd92ec96089118f483a112cf "githalytics.com")](http://githalytics.com/sintaxi/harp)
