@@ -1,22 +1,29 @@
 {
   "name": "harp",
-  "version": "0.11.2",
+  "version": "0.14.0",
   "description": "Static web server with built in preprocessing",
   "author": "Brock Whitten <brock@chloi.io>",
-  "contributors": [
-    { "name": "Brock Whitten", "email": "brock@chloi.io" },
-    { "name": "Rob Ellis", "email": "rob@chloi.io" },
-    { "name": "Jorge Pedret", "email": "jorge@chloi.io" },
-    { "name": "Michael Brooks", "email": "michael@michaelbrooks.ca" },
-    { "name": "Tommy-Carlos Williams", "email": "tommy@devgeeks.org" },
-    { "name": "Darryl Pogue", "email": "darryl@dpogue.ca" },
-    { "name": "Boris Mann", "email": "boris@bmannconsulting.com" },
-    { "name": "Kenneth Ormandy", "email": "kenneth@chloi.io" },
-    { "name": "Keith Yao", "email": "i@yaofur.com" },
-    { "name": "Eric Drechsel", "email": "eric@pdxhub.org" },
-    { "name": "Andrew Hobden", "email": "andrew@hoverbear.org" },
-    { "name": "Max Melentiev", "email": "printercu@gmail.com" },
-    { "name": "Remy Sharp", "email": "remy@remysharp.com" }
+  "contributors":
+  [ "Brock Whitten <brock@chloi.io>"
+  , "Rob Ellis <rob@chloi.io>"
+  , "Jorge Pedret <jorge@chloi.io>"
+  , "Michael Brooks <michael@michaelbrooks.ca>"
+  , "Tommy-Carlos Williams <tommy@devgeeks.org>"
+  , "Darryl Pogue <darryl@dpogue.ca>"
+  , "Boris Mann <boris@bmannconsulting.com>"
+  , "Kenneth Ormandy <kenneth@chloi.io>"
+  , "Keith Yao <i@yaofur.com>"
+  , "Eric Drechsel <eric@pdxhub.org>"
+  , "Andrew Hobden <andrew@hoverbear.org>"
+  , "Max Melentiev <printercu@gmail.com>"
+  , "Remy Sharp <remy@remysharp.com>"
+  , "Zeke Sikelianos <zeke@sikelianos.com>"
+  , "Marc Knaup <marc.knaup@koeln.de>"
+  ],
+  "keywords": [
+    "static web server",
+    "static site generator",
+    "sass", "less", "stylus", "markdown", "jade", "ejs", "coffeescript"
   ],
   "homepage": "http://harpjs.com",
   "bugs": "http://github.com/sintaxi/harp/issues",
@@ -31,24 +38,25 @@
     "connect": "2.9.0",
     "fs-extra": "0.6.4",
     "async": "0.2.9",
-    "mime": "1.2.11"
+    "mime": "1.2.11",
+    "download-github-repo": "0.1.0",
+    "envy-json": "0.2.0"
   },
   "devDependencies": {
     "mocha": "1.8.1",
-    "should": "1.2.2",
+    "should": "3.1.2",
     "request": "2.30.0",
-    "cheerio": "~0.13.1"
+    "cheerio": "~0.13.1",
+    "nixt": "~0.3.0"
   },
   "scripts": {
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec -t 5000"
   },
   "license": "MIT",
   "preferGlobal": true,
   "readmeFilename": "README.md",
-  "bin": {
-    "harp": "./bin/harp"
-  },
+  "bin": "./bin/harp",
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.10"
   }
 }

@@ -82,12 +82,23 @@ describe("helpers", function(){
       done()
     })
 
-    it("should defautl to root style", function(done){
+    it("should default to root style", function(done){
       var cfg = helpers.setup(path.join(__dirname, "apps", "app-style-implicit"))
       cfg.should.have.property("config")
       cfg.should.have.property("projectPath")
       cfg.should.have.property("publicPath")
       cfg.publicPath.should.eql(cfg.projectPath)
+      done()
+    })
+
+    it("should replace values like $foo with process.env.foo", function(done){
+      process.env.HARP_BASIC_AUTH = "jabberwocky:skrillex"
+      var cfg = helpers.setup(path.join(__dirname, "apps", "envy"))
+      cfg.should.have.property("config")
+      cfg.should.have.property("projectPath")
+      cfg.should.have.property("publicPath")
+      cfg.config.should.have.property("basicAuth", "jabberwocky:skrillex")
+      cfg.config.should.not.have.property("optionalThing")
       done()
     })
 
